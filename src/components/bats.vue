@@ -56,7 +56,7 @@ const bats = ref(
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
 }
 .bat-gif {
-  width: 64px; height: 32px;
+  width: 100px; height: 100px;
   pointer-events: none;
 }
 
