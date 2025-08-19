@@ -1,55 +1,57 @@
 <script setup>
 import { ref } from "vue";
 
-const clickCount = ref(0);
 const exploded = ref(false);
 
-function handleClick() {
-  if (exploded.value) return;
-  clickCount.value++;
-  if (clickCount.value >= 1) {
-    exploded.value = true;
-    // Play audio
-    const audio = new Audio("/explosion.mp3");
-    audio.play();
-    setTimeout(() => {
-      exploded.value = false;
-      clickCount.value = 0;
-    }, 2600); // Hide after GIF duration (adjust as needed)
+// Preload the audio once. File should be in /public/explosion.mp3
+const audio = new Audio("/explosion.mp3");
+audio.preload = "auto";
+
+async function handleClick() {
+  if (exploded.value) return;         // ignore extra clicks while active
+  exploded.value = true;
+  try {
+    audio.currentTime = 0;            // restart if it was played before
+    await audio.play();
+  } catch (_) {
+    // If playback fails, the overlay still shows for 10s
   }
+
+  // Keep the GIF visible for 10 seconds total
+  setTimeout(() => {
+    exploded.value = false;
+  }, 10000);
 }
 </script>
 
 <template>
-  <div class="heart-explode">
+  <div class="boom">
     <button
-      class="heart-btn"
+      class="boom-btn"
       :disabled="exploded"
       @click="handleClick"
-      :aria-label="'Click me! (' + clickCount + '/10)'"
+      aria-label="Trigger effect"
+      title="Trigger effect"
     >
-      <span
-        class="heart"
-        :class="{ pulse: !exploded && clickCount > 0, shake: clickCount >= 1 }"
-      >📜</span>
-      <span v-if="!exploded" class="count">{{ 1 - clickCount }}</span>
+      <span class="icon">📜</span>
     </button>
+
     <div v-if="exploded" class="explosion-overlay">
-      <img src="/explosion.gif" alt="Explosion!" class="explosion-gif" />
+      <img src="/explosion.gif" alt="" class="explosion-gif" />
       <div class="boom-text">Praised be Banor!</div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.heart-explode {
+.boom {
   position: absolute;
   top: 18px;
   right: -82px;
   z-index: 20;
 }
 
-.heart-btn {
+.boom-btn {
   background: #272727;
   border: 2px solid #c39b77;
   border-radius: 50%;
@@ -57,40 +59,19 @@ function handleClick() {
   font-size: 2.1em;
   cursor: pointer;
   box-shadow: 0 3px 18px #222a;
-  position: relative;
-  transition: border-color 0.25s;
+  display: grid;
+  place-items: center;
+  transition: transform 0.08s ease, border-color 0.25s;
 }
+.boom-btn:active { transform: scale(0.96); }
+.boom-btn:disabled { cursor: default; opacity: 0.85; }
 
-.heart {
+.icon {
+  line-height: 1;
   display: inline-block;
-  transition: transform 0.2s;
-}
-.heart.pulse {
-  animation: pulse 0.22s;
-}
-.heart.shake {
-  animation: shake 0.3s;
-}
-.count {
-  position: absolute;
-  top: 3px; right: 8px;
-  font-size: 1em;
-  color: #ffc107;
-  font-weight: bold;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  70% { transform: scale(1.28); }
-  100% { transform: scale(1); }
-}
-@keyframes shake {
-  0% { transform: rotate(-10deg) scale(1.22); }
-  40% { transform: rotate(10deg) scale(1.32); }
-  70% { transform: rotate(-10deg) scale(1.22);}
-  100% { transform: rotate(0deg) scale(1);}
-}
-
+/* Overlay + GIF */
 .explosion-overlay {
   position: fixed;
   inset: 0;
