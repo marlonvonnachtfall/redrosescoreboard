@@ -1,28 +1,4 @@
-{
-  "guild": {
-    "name": "Red Rose",
-    "world": "Antica",
-    "logo_url": "https://static.tibia.com/images/guildlogos/Red_Rose.gif",
-    "description": "We are an ancient guild of Good, followers of Banor. \nWe are peaceloving and try to uphold law and noble virtues, but like the rose we have sharp thorns, too! \n\n- Founded December 7th 1998 - \n\n- Proud winner of the first ever Tibian Football League - Recruitment is currently open! \nContact us at our forum.",
-    "guildhalls": [
-      {
-        "name": "Guildhall of the Red Rose",
-        "world": "Antica",
-        "paid_until": "2025-09-14"
-      }
-    ],
-    "active": true,
-    "founded": "2002-02-18",
-    "open_applications": true,
-    "homepage": "?action=externallinkwarning&amp;target=https%3A%2F%2Fredrose-guild.com%2F",
-    "in_war": false,
-    "disband_date": "",
-    "disband_condition": "",
-    "players_online": 2,
-    "players_offline": 180,
-    "members_total": 182,
-    "members_invited": 0,
-    "members": [
+[
       {
         "name": "Natures Lord",
         "title": "Orator",
@@ -1661,21 +1637,7 @@
         "joined": "2025-08-19",
         "status": "offline"
       }
-    ],
-    "invites": null
-  },
-  "information": {
-    "api": {
-      "version": 4,
-      "release": "4.4.0",
-      "commit": "4f71bc22309fabcf31882cf69240cf26a6fcc19f"
-    },
-    "timestamp": "2025-08-19T12:50:00Z",
-    "tibia_urls": [
-      "https://www.tibia.com/community/?subtopic=guilds&page=view&GuildName=Red+Rose"
-    ],
-    "status": {
-      "http_code": 200
+    ]
     }
   }
 }
