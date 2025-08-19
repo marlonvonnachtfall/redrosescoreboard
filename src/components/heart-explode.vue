@@ -20,7 +20,7 @@ async function handleClick() {
   // Keep the GIF visible for 10 seconds total
   setTimeout(() => {
     exploded.value = false;
-  }, 10000);
+  }, 16000);
 }
 </script>
 
