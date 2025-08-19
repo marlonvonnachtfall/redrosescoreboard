@@ -7,7 +7,7 @@ const exploded = ref(false);
 function handleClick() {
   if (exploded.value) return;
   clickCount.value++;
-  if (clickCount.value >= 10) {
+  if (clickCount.value >= 1) {
     exploded.value = true;
     // Play audio
     const audio = new Audio("/explosion.mp3");
@@ -30,13 +30,13 @@ function handleClick() {
     >
       <span
         class="heart"
-        :class="{ pulse: !exploded && clickCount > 0, shake: clickCount >= 9 }"
+        :class="{ pulse: !exploded && clickCount > 0, shake: clickCount >= 1 }"
       >💖</span>
-      <span v-if="!exploded" class="count">{{ 10 - clickCount }}</span>
+      <span v-if="!exploded" class="count">{{ 1 - clickCount }}</span>
     </button>
     <div v-if="exploded" class="explosion-overlay">
       <img src="/explosion.gif" alt="Explosion!" class="explosion-gif" />
-      <div class="boom-text">BOOM!</div>
+      <div class="boom-text">Praised be Banor!</div>
     </div>
   </div>
 </template>
