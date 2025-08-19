@@ -62,7 +62,7 @@
     </div>
   </div>
   <main class="spooky-bg test-border" style="min-height:100%;">
-    <h1>It works</h1>
+    <h1>🌹</h1>
   </main>
 </template>
 
