@@ -97,6 +97,7 @@ export default {
       searchTimeout: null,
       crowns: ["goldCrown", "silverCrown", "bronzeCrown"],
       crownBorder: ["gold", "silver", "bronze"],
+audioBlocked: false, 
     };
   },
 
