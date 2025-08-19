@@ -5,7 +5,7 @@
     <div class="guild-image"></div>
 
     <h1 class="guild-title">Red Rose's</h1>
-    <h2 class="guild-title">Slaying weekend</h2>
+    <h2 class="guild-title">Crimson Weekend</h2>
     <div class="search-bar">
       <input
         type="text"
@@ -131,7 +131,7 @@ export default {
     async fetchGuildData() {
       try {
         const response = await fetch(
-          "https://api.tibiadata.com/v4/guild/above"
+          "https://api.tibiadata.com/v4/guild/Red%20Rose"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch guild data");
