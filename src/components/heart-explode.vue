@@ -31,7 +31,7 @@ function handleClick() {
       <span
         class="heart"
         :class="{ pulse: !exploded && clickCount > 0, shake: clickCount >= 1 }"
-      >💖</span>
+      >📜</span>
       <span v-if="!exploded" class="count">{{ 1 - clickCount }}</span>
     </button>
     <div v-if="exploded" class="explosion-overlay">
