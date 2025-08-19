@@ -2,6 +2,16 @@
   <div class="guild-container">
     <Bats />
     <HeartExplode />
+
+  <audio ref="entryAudio" src="/marathon-theme.mp3" preload="auto"></audio>
+  <div
+    v-if="audioBlocked"
+    class="audio-gate"
+    @click="resumeAudio"
+    @touchstart.prevent="resumeAudio"
+  >
+    <p>🔊 Tap or click to enable sound</p>
+  </div>
     <div class="guild-image"></div>
 
     <h1 class="guild-title">Red Rose's</h1>
@@ -13,6 +23,7 @@
         v-model="searchQuery"
         @input="delaySearch"
       />
+
     </div>
 
     <div class="coinContainer">
