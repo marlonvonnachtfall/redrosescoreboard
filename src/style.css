@@ -66,6 +66,17 @@ a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(2
 button {
   background: transparent; color: var(--ink);
   border: 1px solid var(--border); border-radius: 12px;
+
+/* quick visual check */
+.test-border { outline: 3px dashed crimson !important; }
+
+/* background served from /public */
+.spooky-bg {
+  background-image: url('/spooky-bg.png'); /* file placed in /public */
+  background-size: cover;
+  background-position: center;
+}
+
   padding: 8px 12px; cursor: pointer;
 }
 button:hover { border-color: rgba(255,255,255,0.25); }
