@@ -10,5 +10,33 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+
+    <!-- Place audio + script inside the body, near the end -->
+    <audio id="bgm" src="/marathon-theme.mp3" autoplay loop muted playsinline></audio>
+    <script>
+      (function () {
+        const a = document.getElementById('bgm');
+
+        async function tryPlay() {
+          try {
+            a.muted = false;
+            if (a.paused) await a.play();
+          } catch (_) { /* ignore */ }
+        }
+
+        if (document.readyState === 'complete') tryPlay();
+        else window.addEventListener('load', tryPlay, { once: true });
+
+        let n = 0;
+        const t = setInterval(() => {
+          tryPlay();
+          if (++n > 8) clearInterval(t); // ~4s of quick retries
+        }, 500);
+
+        ['pointerdown', 'keydown', 'touchstart'].forEach(evt => {
+          document.addEventListener(evt, tryPlay, { once: true, passive: true });
+        });
+      })();
+    </script>
   </body>
 </html>
