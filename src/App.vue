@@ -61,17 +61,10 @@
       <p>Loading data or no members found...</p>
     </div>
   </div>
-</template>
-
-<template>
   <main class="spooky-bg test-border" style="min-height:100%;">
     <h1>It works</h1>
   </main>
 </template>
-
-<script setup>
-// no script needed
-</script>
 
 <style>
 /* keep this unscoped or empty; global rules live in style.css */
