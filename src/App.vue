@@ -63,6 +63,20 @@
   </div>
 </template>
 
+<template>
+  <main class="spooky-bg test-border" style="min-height:100%;">
+    <h1>It works</h1>
+  </main>
+</template>
+
+<script setup>
+// no script needed
+</script>
+
+<style>
+/* keep this unscoped or empty; global rules live in style.css */
+</style>
+
 <script>
 import Bats from "./components/bats.vue";
 import HeartExplode from "./components/heart-explode.vue";
