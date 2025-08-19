@@ -6,36 +6,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Vue</title>
+    <style>
+      /* --- Curtain overlay --- */
+      #curtain {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        background: #0a0a0a; /* behind the fabric */
+        font-family: Cinzel, serif;
+      }
+      #curtain .panel {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50vw;
+        transition: transform 900ms ease-in-out;
+        /* simple “velvet” look without images */
+        background:
+          radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,0.07), rgba(0,0,0,0) 40%),
+          linear-gradient(90deg, rgba(0,0,0,0.25), rgba(255,255,255,0.08), rgba(0,0,0,0.25));
+        background-color: #4a0a0a;
+        box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
+      }
+      #curtain .left  { left: 0;  transform: translateX(0); }
+      #curtain .right { right: 0; transform: translateX(0); }
+      #curtain.open .left  { transform: translateX(-100%); }
+      #curtain.open .right { transform: translateX(100%); }
+
+      #open-btn {
+        position: relative;
+        padding: 12px 18px;
+        border: 1px solid rgba(255,255,255,0.5);
+        background: rgba(0,0,0,0.35);
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        border-radius: 6px;
+        backdrop-filter: blur(2px);
+      }
+      #open-btn:hover { background: rgba(0,0,0,0.5); }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" aria-hidden="true"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <!-- Place audio + script inside the body, near the end -->
-    <audio id="bgm" src="/marathon-theme.mp3" autoplay loop muted playsinline></audio>
+    <!-- Audio (will start on curtain click) -->
+    <audio id="bgm" src="/marathon-theme.mp3" loop playsinline preload="auto"></audio>
+
+    <!-- Curtain overlay -->
+    <div id="curtain" role="dialog" aria-modal="true" aria-label="Intro curtain">
+      <div class="panel left"></div>
+      <div class="panel right"></div>
+      <button id="open-btn">Click to remove the curtains</button>
+    </div>
+
     <script>
       (function () {
-        const a = document.getElementById('bgm');
+        const curtain = document.getElementById('curtain');
+        const left    = curtain.querySelector('.left');
+        const right   = curtain.querySelector('.right');
+        const btn     = document.getElementById('open-btn');
+        const app     = document.getElementById('app');
+        const audio   = document.getElementById('bgm');
 
-        async function tryPlay() {
+        async function openCurtain() {
+          curtain.classList.add('open');
+          // Unlock and start audio on this user gesture
           try {
-            a.muted = false;
-            if (a.paused) await a.play();
-          } catch (_) { /* ignore */ }
+            audio.muted = false;
+            await audio.play();
+          } catch (_) { /* some browsers may need a second attempt; handled below */ }
+          app.removeAttribute('aria-hidden');
+          // Prevent accidental second clicks during animation
+          btn.disabled = true;
+          curtain.style.pointerEvents = 'none';
         }
 
-        if (document.readyState === 'complete') tryPlay();
-        else window.addEventListener('load', tryPlay, { once: true });
-
-        let n = 0;
-        const t = setInterval(() => {
-          tryPlay();
-          if (++n > 8) clearInterval(t); // ~4s of quick retries
-        }, 500);
-
-        ['pointerdown', 'keydown', 'touchstart'].forEach(evt => {
-          document.addEventListener(evt, tryPlay, { once: true, passive: true });
+        // Remove overlay after the right panel finishes sliding
+        right.addEventListener('transitionend', (e) => {
+          if (e.propertyName === 'transform' && curtain.classList.contains('open')) {
+            curtain.remove();
+            // If audio still didn’t start, try once more (still counts as same gesture on many browsers)
+            if (audio.paused) audio.play().catch(() => {});
+          }
         });
+
+        btn.addEventListener('click', openCurtain);
       })();
     </script>
   </body>
