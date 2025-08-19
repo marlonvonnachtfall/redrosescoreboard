@@ -247,6 +247,38 @@ audioBlocked: false,
     this.loadData();
   },
 };
+
+ async tryAutoplay() {
+      const el = this.$refs.entryAudio;
+      if (!el) return;
+      try {
+        el.volume = 0.8;                   // adjust if you want
+        // el.loop = true;                 // uncomment to loop
+        await el.play();                   // try to autoplay
+        this.audioBlocked = false;
+      } catch (e) {
+        // Browser blocked autoplay with sound; show the overlay
+        this.audioBlocked = true;
+      }
+    },
+
+    resumeAudio() {
+      const el = this.$refs.entryAudio;
+      if (el) {
+        el.play();
+        this.audioBlocked = false;
+      }
+    },
+  },
+
+  created() {
+    this.loadData();
+  },
+
+  mounted() {
+    this.tryAutoplay();                    // start audio when the page mounts
+  },
+};
 </script>
 
 <style scoped>
