@@ -2,16 +2,6 @@
   <div class="guild-container">
     <Bats />
     <HeartExplode />
-
-  <audio ref="entryAudio" src="/marathon-theme.mp3" preload="auto"></audio>
-  <div
-    v-if="audioBlocked"
-    class="audio-gate"
-    @click="resumeAudio"
-    @touchstart.prevent="resumeAudio"
-  >
-    <p>🔊 Tap or click to enable sound</p>
-  </div>
     <div class="guild-image"></div>
 
     <h1 class="guild-title">Red Rose's</h1>
@@ -23,7 +13,6 @@
         v-model="searchQuery"
         @input="delaySearch"
       />
-
     </div>
 
     <div class="coinContainer">
@@ -86,7 +75,7 @@ import Bats from "./components/bats.vue";
 import HeartExplode from "./components/heart-explode.vue";
 export default {
   components: { Bats, HeartExplode },
-  data() {
+   data() {
     return {
       searchQuery: "",
       guildMembers: [],
@@ -97,89 +86,140 @@ export default {
       searchTimeout: null,
       crowns: ["goldCrown", "silverCrown", "bronzeCrown"],
       crownBorder: ["gold", "silver", "bronze"],
-      audioBlocked: false, // overlay flag
     };
   },
 
   computed: {
     sortedFilteredScores() {
-      const filtered = this.filteredScores.filter((s) => s.points > 0);
+      // Filter out members with 0 points
+      let filtered = this.filteredScores.filter((score) => score.points > 0);
+
+      // Sort the filtered results by points in descending order and assign placements
       return filtered
         .sort((a, b) => b.points - a.points)
-        .map((score, index) => ({ ...score, placement: index + 1 }));
+        .map((score, index) => ({
+          ...score,
+          placement: index + 1,
+        }));
     },
   },
 
   methods: {
     delaySearch() {
-      if (this.searchTimeout) clearTimeout(this.searchTimeout);
-      this.searchTimeout = setTimeout(() => this.performSearch(), 560);
+      if (this.searchTimeout) {
+        clearTimeout(this.searchTimeout);
+      }
+      this.searchTimeout = setTimeout(() => {
+        this.performSearch();
+      }, 560);
     },
 
     performSearch() {
-      let filtered = this.scores.filter((s) => s.points > 0);
+      // Filter out members with 0 points
+      let filtered = this.scores.filter((score) => score.points > 0);
+
+      // If there is a search query, further filter the scores by name
       if (this.searchQuery) {
-        const q = this.searchQuery.toLowerCase();
-        filtered = filtered.filter((s) => s.name.toLowerCase().includes(q));
+        filtered = filtered.filter((score) =>
+          score.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
       }
+
       this.filteredScores = filtered;
     },
 
     async fetchGuildData() {
       try {
-        const response = await fetch("https://api.tibiadata.com/v4/guild/above");
-        if (!response.ok) throw new Error("Failed to fetch guild data");
+        const response = await fetch(
+          "https://api.tibiadata.com/v4/guild/Red%20Rose"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch guild data");
+        }
         const data = await response.json();
+        console.log(data);
         if (data.guild && data.guild.members) {
-          this.guildMembers = data.guild.members.map((m) => ({
-            name: m.name,
-            level: m.level,
+          this.guildMembers = data.guild.members.map((member) => ({
+            name: member.name,
+            level: member.level,
           }));
         }
-      } catch (err) {
-        this.error = err.message;
-        console.error("Error fetching guild data:", err);
+      } catch (error) {
+        this.error = error.message;
+        console.error("Error fetching guild data:", error);
       }
     },
 
     async fetchInitialLevels() {
       try {
         const response = await fetch("initial-level.json");
-        if (!response.ok) throw new Error("Failed to load initial levels");
-        this.initialLevels = await response.json();
-      } catch (err) {
-        this.error = err.message;
-        console.error("Error fetching initial levels:", err);
+        if (!response.ok) {
+          throw new Error("Failed to load initial levels");
+        }
+        const data = await response.json();
+        this.initialLevels = data;
+      } catch (error) {
+        this.error = error.message;
+        console.error("Error fetching initial levels:", error);
       }
     },
 
     calculateScores() {
       if (this.guildMembers.length && this.initialLevels.length) {
         this.scores = this.guildMembers.map((member) => {
-          const init = this.initialLevels.find((i) => i.name === member.name);
-          if (init) {
-            const diff = member.level - init.level;
-            const points = this.calculatePoints(diff, init.level);
-            return { name: member.name, points, initialLevel: init.level, levelNow: member.level };
+          const initialMember = this.initialLevels.find(
+            (init) => init.name === member.name
+          );
+          if (initialMember) {
+            const levelDifference = member.level - initialMember.level;
+            const points = this.calculatePoints(
+              levelDifference,
+              initialMember.level
+            );
+            return {
+              name: member.name,
+              points: points,
+              initialLevel: initialMember.level,
+              levelNow: member.level,
+            };
+          } else {
+            return {
+              name: member.name,
+              points: 0,
+              initialLevel: null,
+              levelNow: member.level,
+            };
           }
-          return { name: member.name, points: 0, initialLevel: null, levelNow: member.level };
         });
+
+        // Set filtered scores to the full list initially
         this.filteredScores = this.scores;
       }
     },
 
     calculatePoints(levelDifference, initialLevel) {
       let points = 0;
+
       for (let i = 1; i <= levelDifference; i++) {
-        const level = initialLevel + i;
-        if (level <= 49) points += 1;
-        else if (level <= 124) points += 5;
-        else if (level <= 224) points += 15;
-        else if (level <= 349) points += 25;
-        else if (level <= 499) points += 40;
-        else if (level <= 674) points += 55;
-        else if (level <= 875) points += 75;
-        else points += 80;
+        let level = initialLevel + i;
+
+        if (level <= 49) {
+          points += 1;
+        } else if (level <= 124) {
+          points += 5;
+        } else if (level <= 224) {
+          points += 15;
+        } else if (level <= 349) {
+          points += 25;
+        } else if (level <= 499) {
+          points += 40;
+        } else if (level <= 674) {
+          points += 55;
+        } else if (level <= 875) {
+          points += 75;
+        } else {
+          points += 80;
+        }
       }
       return points;
     },
@@ -189,39 +229,13 @@ export default {
       await this.fetchGuildData();
       this.calculateScores();
     },
-
-    // ✅ audio methods live INSIDE methods {}
-    async tryAutoplay() {
-      const el = this.$refs.entryAudio;
-      if (!el) return;
-      try {
-        el.volume = 0.8;
-        // el.loop = true; // enable if you want looping
-        await el.play();
-        this.audioBlocked = false;
-      } catch {
-        this.audioBlocked = true; // show overlay if blocked by browser
-      }
-    },
-
-    resumeAudio() {
-      const el = this.$refs.entryAudio;
-      if (!el) return;
-      el.play();
-      this.audioBlocked = false;
-    },
   },
 
   created() {
     this.loadData();
   },
-
-  mounted() {
-    this.tryAutoplay();
-  },
 };
 </script>
- 
 
 <style scoped>
 /* Container Styles */
@@ -449,27 +463,4 @@ img {
     box-shadow: 0 0 10px #b87333, 0 0 15px #b87333, 0 0 20px #b87333;
   }
 }
-
-/* --- audio gate overlay --- */
-.audio-gate{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.65);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  cursor: pointer;
-  text-align: center;
-}
-.audio-gate p{
-  margin: 0;
-  padding: 14px 18px;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 10px;
-  background: rgba(20,20,26,.6);
-  color: #fff;
-  font-size: 1.05rem;
-}
-
 </style>
