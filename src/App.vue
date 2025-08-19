@@ -507,4 +507,27 @@ img {
     box-shadow: 0 0 10px #b87333, 0 0 15px #b87333, 0 0 20px #b87333;
   }
 }
+
+/* --- audio gate overlay --- */
+.audio-gate{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  text-align: center;
+}
+.audio-gate p{
+  margin: 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 10px;
+  background: rgba(20,20,26,.6);
+  color: #fff;
+  font-size: 1.05rem;
+}
+
 </style>
