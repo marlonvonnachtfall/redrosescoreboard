@@ -242,13 +242,7 @@ audioBlocked: false,
       this.calculateScores();
     },
   },
-
-  created() {
-    this.loadData();
-  },
-};
-
- async tryAutoplay() {
+async tryAutoplay() {
       const el = this.$refs.entryAudio;
       if (!el) return;
       try {
@@ -280,6 +274,13 @@ audioBlocked: false,
   },
 };
 </script>
+
+  created() {
+    this.loadData();
+  },
+};
+</script>
+ 
 
 <style scoped>
 /* Container Styles */
