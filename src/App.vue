@@ -258,7 +258,7 @@ export default {
         } else if (level <= 875) {
           points += 75;
         } else {
-          points += 80;
+          points += 100;
         }
       }
       return points;
