@@ -1636,5 +1636,23 @@
         "level": 416,
         "joined": "2025-08-19",
         "status": "offline"
+      },
+      {
+        "name": "Las the Arcane",
+        "title": "",
+        "rank": "Novicium Absentium",
+        "vocation": "Royal Paladin",
+        "level": 1,
+        "joined": "2025-08-19",
+        "status": "offline"
+      },
+            {
+        "name": "Elara von Nachtfall",
+        "title": "",
+        "rank": "Novicium Absentium",
+        "vocation": "Royal Paladin",
+        "level": 30,
+        "joined": "2025-08-19",
+        "status": "offline"
       }
 ]
