@@ -4,7 +4,7 @@
         "title": "Orator",
         "rank": "Leader",
         "vocation": "Royal Paladin",
-        "level": 285,
+        "level": 288,
         "joined": "2010-12-20",
         "status": "offline"
       },
@@ -22,7 +22,7 @@
         "title": "Magister Noviciorum",
         "rank": "Leader",
         "vocation": "Master Sorcerer",
-        "level": 822,
+        "level": 823,
         "joined": "2025-04-03",
         "status": "offline"
       },
@@ -31,7 +31,7 @@
         "title": "Legatus",
         "rank": "Leader",
         "vocation": "Elite Knight",
-        "level": 505,
+        "level": 507,
         "joined": "2020-05-17",
         "status": "offline"
       },
@@ -40,23 +40,23 @@
         "title": "Rose Patronus",
         "rank": "Leader",
         "vocation": "Elite Knight",
-        "level": 560,
+        "level": 567,
         "joined": "2024-05-26",
         "status": "offline"
       },
       {
         "name": "Mihiron",
         "title": "",
-        "rank": "Praetor",
+        "rank": "Veneratus",
         "vocation": "Elite Knight",
-        "level": 447,
+        "level": 449,
         "joined": "2018-12-02",
         "status": "offline"
       },
       {
         "name": "Sidney Beauclair",
         "title": "",
-        "rank": "Praetor",
+        "rank": "Veneratus",
         "vocation": "Elite Knight",
         "level": 441,
         "joined": "2025-03-25",
@@ -67,7 +67,7 @@
         "title": "Dominus Somni",
         "rank": "Aedilus",
         "vocation": "Elite Knight",
-        "level": 1081,
+        "level": 1083,
         "joined": "2019-01-13",
         "status": "offline"
       },
@@ -76,7 +76,7 @@
         "title": "Lady of Blackhearts",
         "rank": "Eques",
         "vocation": "Elite Knight",
-        "level": 691,
+        "level": 703,
         "joined": "2024-03-24",
         "status": "offline"
       },
@@ -85,7 +85,7 @@
         "title": "",
         "rank": "Eques",
         "vocation": "Elite Knight",
-        "level": 378,
+        "level": 379,
         "joined": "2021-07-25",
         "status": "offline"
       },
@@ -94,7 +94,7 @@
         "title": "",
         "rank": "Eques",
         "vocation": "Elite Knight",
-        "level": 214,
+        "level": 216,
         "joined": "2024-03-13",
         "status": "offline"
       },
@@ -103,7 +103,7 @@
         "title": "Hunting Magister",
         "rank": "Eques",
         "vocation": "Royal Paladin",
-        "level": 649,
+        "level": 652,
         "joined": "2023-11-26",
         "status": "offline"
       },
@@ -121,7 +121,7 @@
         "title": "",
         "rank": "Eques",
         "vocation": "Royal Paladin",
-        "level": 335,
+        "level": 337,
         "joined": "2010-03-15",
         "status": "offline"
       },
@@ -139,7 +139,7 @@
         "title": "",
         "rank": "Inceptor",
         "vocation": "Royal Paladin",
-        "level": 449,
+        "level": 457,
         "joined": "2024-10-27",
         "status": "offline"
       },
@@ -148,7 +148,7 @@
         "title": "Sublime Wordsmith",
         "rank": "Inceptor",
         "vocation": "Royal Paladin",
-        "level": 243,
+        "level": 245,
         "joined": "2024-06-08",
         "status": "offline"
       },
@@ -157,8 +157,17 @@
         "title": "",
         "rank": "Inceptor",
         "vocation": "Royal Paladin",
-        "level": 335,
+        "level": 343,
         "joined": "2024-08-16",
+        "status": "offline"
+      },
+      {
+        "name": "Osiris Blackheart",
+        "title": "",
+        "rank": "Inceptor",
+        "vocation": "Royal Paladin",
+        "level": 268,
+        "joined": "2025-03-30",
         "status": "offline"
       },
       {
@@ -166,7 +175,7 @@
         "title": "",
         "rank": "Inceptor",
         "vocation": "Exalted Monk",
-        "level": 191,
+        "level": 207,
         "joined": "2025-04-09",
         "status": "offline"
       },
@@ -175,16 +184,16 @@
         "title": "",
         "rank": "Inceptor",
         "vocation": "Elite Knight",
-        "level": 314,
+        "level": 317,
         "joined": "2023-10-29",
-        "status": "online"
+        "status": "offline"
       },
       {
         "name": "Romelix",
         "title": "",
         "rank": "Inceptor",
         "vocation": "Master Sorcerer",
-        "level": 375,
+        "level": 380,
         "joined": "2024-09-15",
         "status": "offline"
       },
@@ -193,7 +202,7 @@
         "title": "",
         "rank": "Inceptor",
         "vocation": "Master Sorcerer",
-        "level": 314,
+        "level": 316,
         "joined": "2024-04-28",
         "status": "offline"
       },
@@ -220,7 +229,7 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Royal Paladin",
-        "level": 324,
+        "level": 326,
         "joined": "2021-12-27",
         "status": "offline"
       },
@@ -228,7 +237,7 @@
         "name": "Ardillita",
         "title": "",
         "rank": "Auxiliarius",
-        "vocation": "Royal Paladin",
+        "vocation": "Paladin",
         "level": 72,
         "joined": "2021-06-12",
         "status": "offline"
@@ -310,7 +319,7 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Exalted Monk",
-        "level": 391,
+        "level": 409,
         "joined": "2025-04-14",
         "status": "offline"
       },
@@ -337,7 +346,7 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Elder Druid",
-        "level": 626,
+        "level": 628,
         "joined": "2025-06-07",
         "status": "offline"
       },
@@ -346,7 +355,7 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Royal Paladin",
-        "level": 701,
+        "level": 703,
         "joined": "2025-05-23",
         "status": "offline"
       },
@@ -367,6 +376,15 @@
         "level": 33,
         "joined": "2023-12-04",
         "status": "offline"
+      },
+      {
+        "name": "Elara von Nachtfall",
+        "title": "",
+        "rank": "Auxiliarius",
+        "vocation": "Master Sorcerer",
+        "level": 134,
+        "joined": "2025-08-24",
+        "status": "online"
       },
       {
         "name": "Ellestra",
@@ -444,7 +462,7 @@
         "name": "His Duudeness",
         "title": "",
         "rank": "Auxiliarius",
-        "vocation": "Royal Paladin",
+        "vocation": "Paladin",
         "level": 79,
         "joined": "2012-08-30",
         "status": "offline"
@@ -522,6 +540,15 @@
         "status": "offline"
       },
       {
+        "name": "Las the Arcane",
+        "title": "",
+        "rank": "Auxiliarius",
+        "vocation": "Elder Druid",
+        "level": 140,
+        "joined": "2025-08-23",
+        "status": "offline"
+      },
+      {
         "name": "Lily Chen Whiteraven",
         "title": "",
         "rank": "Auxiliarius",
@@ -537,15 +564,6 @@
         "vocation": "Elder Druid",
         "level": 51,
         "joined": "2013-11-17",
-        "status": "offline"
-      },
-      {
-        "name": "Meheron",
-        "title": "",
-        "rank": "Auxiliarius",
-        "vocation": "Royal Paladin",
-        "level": 556,
-        "joined": "2023-08-01",
         "status": "offline"
       },
       {
@@ -594,15 +612,6 @@
         "status": "offline"
       },
       {
-        "name": "Nebexi",
-        "title": "",
-        "rank": "Auxiliarius",
-        "vocation": "Royal Paladin",
-        "level": 111,
-        "joined": "2025-03-11",
-        "status": "offline"
-      },
-      {
         "name": "Neo matrix",
         "title": "",
         "rank": "Auxiliarius",
@@ -634,7 +643,7 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Elder Druid",
-        "level": 307,
+        "level": 317,
         "joined": "2025-03-14",
         "status": "offline"
       },
@@ -661,7 +670,7 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Druid",
-        "level": 8,
+        "level": 7,
         "joined": "2023-12-10",
         "status": "offline"
       },
@@ -699,15 +708,6 @@
         "vocation": "Royal Paladin",
         "level": 29,
         "joined": "2020-02-04",
-        "status": "offline"
-      },
-      {
-        "name": "Red Smuggler",
-        "title": "",
-        "rank": "Auxiliarius",
-        "vocation": "Elite Knight",
-        "level": 20,
-        "joined": "2025-05-07",
         "status": "offline"
       },
       {
@@ -760,9 +760,9 @@
         "title": "",
         "rank": "Auxiliarius",
         "vocation": "Elite Knight",
-        "level": 332,
+        "level": 341,
         "joined": "2025-08-06",
-        "status": "online"
+        "status": "offline"
       },
       {
         "name": "Shadow of Banor",
@@ -958,7 +958,7 @@
         "title": "",
         "rank": "Propraetor",
         "vocation": "Master Sorcerer",
-        "level": 91,
+        "level": 95,
         "joined": "2007-06-17",
         "status": "offline"
       },
@@ -1300,7 +1300,7 @@
         "title": "",
         "rank": "Rosa Absentia",
         "vocation": "Elder Druid",
-        "level": 375,
+        "level": 379,
         "joined": "2010-11-19",
         "status": "offline"
       },
@@ -1345,7 +1345,7 @@
         "title": "",
         "rank": "Rosa Absentia",
         "vocation": "Elite Knight",
-        "level": 298,
+        "level": 300,
         "joined": "2020-07-19",
         "status": "offline"
       },
@@ -1471,7 +1471,7 @@
         "title": "",
         "rank": "Novellus Rosae",
         "vocation": "None",
-        "level": 66,
+        "level": 69,
         "joined": "2025-06-03",
         "status": "offline"
       },
@@ -1543,7 +1543,7 @@
         "title": "",
         "rank": "Novicium",
         "vocation": "Elite Knight",
-        "level": 185,
+        "level": 217,
         "joined": "2025-08-17",
         "status": "offline"
       },
@@ -1552,8 +1552,17 @@
         "title": "",
         "rank": "Novicium",
         "vocation": "Elder Druid",
-        "level": 657,
+        "level": 670,
         "joined": "2025-08-03",
+        "status": "offline"
+      },
+      {
+        "name": "Mac Stonkchopper",
+        "title": "",
+        "rank": "Novicium",
+        "vocation": "Elite Knight",
+        "level": 128,
+        "joined": "2025-08-31",
         "status": "offline"
       },
       {
@@ -1561,8 +1570,17 @@
         "title": "",
         "rank": "Novicium",
         "vocation": "Royal Paladin",
-        "level": 641,
+        "level": 645,
         "joined": "2025-08-17",
+        "status": "offline"
+      },
+      {
+        "name": "Nanvi",
+        "title": "",
+        "rank": "Novicium",
+        "vocation": "Elite Knight",
+        "level": 100,
+        "joined": "2025-08-31",
         "status": "offline"
       },
       {
@@ -1570,17 +1588,8 @@
         "title": "",
         "rank": "Novicium",
         "vocation": "Royal Paladin",
-        "level": 386,
+        "level": 394,
         "joined": "2025-04-13",
-        "status": "offline"
-      },
-      {
-        "name": "Osiris Blackheart",
-        "title": "",
-        "rank": "Novicium",
-        "vocation": "Royal Paladin",
-        "level": 268,
-        "joined": "2025-03-30",
         "status": "offline"
       },
       {
@@ -1597,7 +1606,7 @@
         "title": "",
         "rank": "Novicium",
         "vocation": "Master Sorcerer",
-        "level": 165,
+        "level": 167,
         "joined": "2021-09-26",
         "status": "offline"
       },
@@ -1606,7 +1615,7 @@
         "title": "",
         "rank": "Novicium",
         "vocation": "Elite Knight",
-        "level": 167,
+        "level": 178,
         "joined": "2025-06-15",
         "status": "offline"
       },
@@ -1633,25 +1642,7 @@
         "title": "",
         "rank": "Novicium Absentium",
         "vocation": "Royal Paladin",
-        "level": 416,
-        "joined": "2025-08-19",
-        "status": "offline"
-      },
-      {
-        "name": "Las the Arcane",
-        "title": "",
-        "rank": "Novicium Absentium",
-        "vocation": "Royal Paladin",
-        "level": 1,
-        "joined": "2025-08-19",
-        "status": "offline"
-      },
-            {
-        "name": "Elara von Nachtfall",
-        "title": "",
-        "rank": "Novicium Absentium",
-        "vocation": "Royal Paladin",
-        "level": 30,
+        "level": 432,
         "joined": "2025-08-19",
         "status": "offline"
       }
