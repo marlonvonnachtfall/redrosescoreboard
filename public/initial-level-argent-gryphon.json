@@ -1,21 +1,12 @@
 [
-  {
-    "name": "Valkera Blackheart",
-        "title": "Dynastic Founder",
+      {
+        "name": "Valkera Blackheart",
+        "title": "Veneratus",
         "rank": "Lady Warden",
         "vocation": "Royal Paladin",
-        "level": 346,
+        "level": 352,
         "joined": "2025-06-16",
         "status": "online"
-      },
-      {
-        "name": "Keldenneos",
-        "title": "",
-        "rank": "Warden",
-        "vocation": "Sorcerer",
-        "level": 8,
-        "joined": "2025-06-16",
-        "status": "offline"
       },
       {
         "name": "Lev Myshkin",
@@ -31,7 +22,7 @@
         "title": "",
         "rank": "Warden",
         "vocation": "Paladin",
-        "level": 8,
+        "level": 7,
         "joined": "2025-06-16",
         "status": "offline"
       },
@@ -75,7 +66,7 @@
         "name": "Amelia Lillywhite",
         "title": "",
         "rank": "Initiate",
-        "vocation": "Knight",
+        "vocation": "Elite Knight",
         "level": 36,
         "joined": "2025-07-09",
         "status": "offline"
@@ -126,15 +117,6 @@
         "status": "offline"
       },
       {
-        "name": "Myrwen Blackheart",
-        "title": "",
-        "rank": "Sentinel",
-        "vocation": "Elder Druid",
-        "level": 195,
-        "joined": "2025-06-16",
-        "status": "offline"
-      },
-      {
         "name": "Allyn Lillywhite",
         "title": "",
         "rank": "Ward",
@@ -157,7 +139,7 @@
         "title": "",
         "rank": "Ward",
         "vocation": "Elite Knight",
-        "level": 37,
+        "level": 96,
         "joined": "2025-08-18",
         "status": "offline"
       },
@@ -165,9 +147,9 @@
         "name": "Renaissance artist",
         "title": "",
         "rank": "Ward",
-        "vocation": "Exalted Monk",
-        "level": 58,
+        "vocation": "Monk",
+        "level": 59,
         "joined": "2025-06-28",
         "status": "offline"
-  }
-]
+      }
+    ]
