@@ -247,18 +247,20 @@ export default {
           points += 1;
         } else if (level <= 124) {
           points += 5;
+          } else if (level <= 199) {
+          points += 12;
         } else if (level <= 224) {
-          points += 15;
+          points += 30;
         } else if (level <= 349) {
-          points += 25;
+          points += 42;
         } else if (level <= 499) {
-          points += 40;
-        } else if (level <= 674) {
           points += 55;
-        } else if (level <= 875) {
+        } else if (level <= 674) {
           points += 75;
+        } else if (level <= 875) {
+          points += 135;
         } else {
-          points += 100;
+          points += 200;
         }
       }
       return points;
